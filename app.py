@@ -14,7 +14,7 @@ def home():
 def chat():
 	if request.method == 'GET':
 		all_posts = query_all_posts()
-		return render_template('chatroom.html', all_posts = all_posts)
+		return render_template('chatroom.html', all_posts = all_posts, login_session = login_session)
 
 	else:
 		author_name = request.form['author_name']
@@ -23,7 +23,7 @@ def chat():
 
 		add_post(author_name = author_name, title = title, content = content)
 		all_posts = query_all_posts()
-		return render_template('chatroom.html', all_posts = all_posts)
+		return render_template('chatroom.html', all_posts = all_posts, login_session  = login_session)
 
 @app.route("/tips")
 def tips():
@@ -32,13 +32,25 @@ def tips():
 @app.route('/admin-login', methods=['POST'])
 def admin_login():
 	admin = get_admin(request.form['username'])
-    if admin != None and admin.verify_password(request.form["password"]):
-        login_session['name'] = user.username
-        login_session['logged_in'] = True
-        return render_template('chatroom.html', login_session = login_session)
-    else:
-        return home()
+	all_posts = query_all_posts()
+	if admin != None and admin.verify_password(request.form["password"]):
+		login_session['name'] = admin.username
+		login_session['logged_in'] = True
+		print(login_session)
+		return render_template('chatroom.html', login_session = login_session, all_posts = all_posts)
+	else:
+		return home()
 
+@app.route('/admin-logout', methods = ['POST'])
+def admin_logout():
+	login_session['username'] = None
+	return home()
+
+@app.route('/delete/<int:post_id>', methods = ['POST'])
+def delete_post(post_id):
+	delete_post_by_id(post_id)
+	all_posts = query_all_posts()
+	return render_template('chatroom.html', all_posts = all_posts, login_session = login_session)
 
 if __name__ == '__main__':
     app.run(debug=True)

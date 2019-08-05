@@ -24,6 +24,14 @@ def add_post(author_name, title, content):
 def query_all_posts():
 	return session1.query(Post).all()
 
+def query_post_by_id(post_id):
+	return session1.query(Post).filter_by(post_id = post_id).first()
+
+def delete_post_by_id(post_id):
+	session1.query(Post).filter_by(post_id = post_id).delete()
+	session1.commit()
+
+# Admin code
 def add_admin(username, password):
 	new_admin = Admin(username = username)
 	new_admin.hash_password(password)
@@ -32,5 +40,7 @@ def add_admin(username, password):
 
 def get_admin(username):
 	return session2.query(Admin).filter_by(username = username).first()
-add_admin("greenwall", "funwithmeet20")
-print(get_admin("greenwall"))
+
+def query_all_admins():
+	return session2.query(Admin).all()
+

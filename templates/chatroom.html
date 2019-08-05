@@ -14,7 +14,7 @@
 	</ul>
 	</div>
 	<h1>Add a comment!</h1>
-	<div class="">
+<div id="form">
 	<form action = "/chat" method = "post" >
 		<p>Name:</p>
 		<input type="text" name="author_name" placeholder="Name">
@@ -26,6 +26,7 @@
 		<br>
 		<input type="submit" name="submit" value = "submit">
 	</form>
+</div>
 	<div class="posts">
 	{% for post in all_posts %}
 	<div class = "post_item">
@@ -40,6 +41,11 @@
 			<h4 class = "post_author"><u>By: {{post.author_name}}</u></h4>
 		{% endif %}
 		<p class = "post_content">{{post.content}}</p>
+		{% if login_session['logged_in'] == True %}
+		<form action="/delete/{{post.post_id}}" method="post">
+    		<input type="submit" name="delete" value="delete">
+    	</form>
+    	{% endif %}
 	</div>
 	{% endfor %}
 </div>
