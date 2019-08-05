@@ -3,6 +3,7 @@
 <head>
 	<title>Chat Room</title>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='chatroom.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navbar.css') }}">
 </head>
 <body>
 	<div class = "navbar">
@@ -10,10 +11,11 @@
   		<li><a href="{{url_for( 'home')}}">Home</a></li>
   		<li><a href="{{url_for( 'chat')}}">Chat</a></li>
   		<li><a href="{{url_for( 'tips')}}">Tips & must know</a></li>
+  		<li><a href="{{url_for( 'admin_logout')}}" id = "log_out_button">Log Out</a></li>
   		
 	</ul>
 	</div>
-	<h1>Add a comment!</h1>
+	<h1 align="center">Add a comment!</h1>
 <div id="form">
 	<form action = "/chat" method = "post" >
 		<p>Name:</p>
@@ -21,7 +23,7 @@
 		<p>Title:</p>
 		<input type="text" name="title" placeholder="Your post's title">
 		<p>Comment:</p>
-		<textarea rows="5" cols="60" style="display: block;" name="content">
+		<textarea rows="5" cols="60" style="display: block;" name="content" id ="text-erea">
 		</textarea>
 		<br>
 		<input type="submit" name="submit" value = "submit">
