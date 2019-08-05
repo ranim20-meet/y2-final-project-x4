@@ -14,6 +14,7 @@ def home():
 def chat():
 	if request.method == 'GET':
 		all_posts = query_all_posts()
+		all_posts = all_posts[::-1]
 		return render_template('chatroom.html', all_posts = all_posts, login_session = login_session)
 
 	else:
@@ -33,6 +34,7 @@ def tips():
 def admin_login():
 	admin = get_admin(request.form['username'])
 	all_posts = query_all_posts()
+	all_posts = all_posts[::-1]
 	if admin != None and admin.verify_password(request.form["password"]):
 		login_session['name'] = admin.username
 		login_session['logged_in'] = True
@@ -50,6 +52,7 @@ def admin_logout():
 def delete_post(post_id):
 	delete_post_by_id(post_id)
 	all_posts = query_all_posts()
+	all_posts = all_posts[::-1]
 	return render_template('chatroom.html', all_posts = all_posts, login_session = login_session)
 
 if __name__ == '__main__':
