@@ -1,0 +1,42 @@
+/*nav bar*/
+.navbar {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #7fb576;
+
+}
+
+li {
+  float: left;
+  size:5px;
+  font-size: 25px
+}
+
+#log_out_button{
+  size:2px;
+  font-size: 25px;
+  padding: 1em 3em;
+}
+
+
+li a {
+  display: block;
+  color: #e0e6df;
+  text-align: center;
+  padding: 1em 8.02em;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #e0e6df;
+  color:#7fb576;
+}
+
+/**/

@@ -2,12 +2,18 @@
 <html>
 <head>
 	<title>tips</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navbar.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='tips.css') }}">
 </head>
 <body>
 	<div class = "navbar">
-		<a href="{{url_for('home')}}">Home</a>
-		<a href="{{url_for('chat')}}">Chat</a>
-		<a href="{{url_for('tips')}}">Tips & must know</a>
+	<ul>
+  		<li><a href="{{url_for( 'home')}}">Home</a></li>
+  		<li><a href="{{url_for( 'chat')}}">Chat</a></li>
+  		<li><a href="{{url_for( 'tips')}}">Tips & must know</a></li>
+  		<li><a href="{{url_for( 'admin_logout')}}" id = "log_out_button">Log Out</a></li>
+  		
+	</ul>
 	</div>
 	<h1>I am the tips page</h1>
 </body>

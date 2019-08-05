@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Home Page</title>
+<<<<<<< HEAD
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
@@ -110,18 +111,25 @@ img {vertical-align: middle;}
   .prev, .next,.text {font-size: 11px}
 }
 </style>
+=======
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navbar.css') }}">
+>>>>>>> 319793b7485916dfe1f5efeca6de1ea18afd42e3
 </head>
 <body>
 	<div class = "navbar">
-		<a href="{{url_for('home')}}">Home</a>
-		<a href="{{url_for('chat')}}">Chat</a>
-		<a href="{{url_for('tips')}}">Tips & must know</a>
+	<ul>
+  		<li><a href="{{url_for( 'home')}}">Home</a></li>
+  		<li><a href="{{url_for( 'chat')}}">Chat</a></li>
+  		<li><a href="{{url_for( 'tips')}}">Tips & must know</a></li>
+  		<li><a href="{{url_for( 'admin_logout')}}" id = "log_out_button">Log Out</a></li>
+  		
+	</ul>
 	</div>
 	<h1> Welcome to our home page </h1>
 	<h4>Admin Login:</h4>
 	<form action = '/admin-login' method="post">
 		<input type="text" name="username" placeholder="username"> <br>
-		<input type="password" name="paswword" placeholder="password"> <br>
+		<input type="password" name="password" placeholder="password"> <br>
 		<input type="submit" name="submit" placeholder="submit">
 	</form>
 
