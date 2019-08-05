@@ -14,7 +14,7 @@
 	</ul>
 	</div>
 	<h1>Add a comment!</h1>
-	<form action = "/chat" method = "post">
+	<form action = "/chat" method = "post" >
 		<p>Name:</p>
 		<input type="text" name="author_name" placeholder="Name">
 		<p>Title:</p>
@@ -28,8 +28,16 @@
 
 	{% for post in all_posts %}
 	<div class = "post_item">
-		<h3 class = "post_title">{{post.title}}</h3>
-		<h4 class = "post_author">By: {{post.author_name}}</h4>
+		{% if post.title == "" %}
+			<h3>No Title</h3>
+		{% else %}
+			<h3 class = "post_title">{{post.title}}</h3>
+		{% endif %}
+		{% if post.author_name == "" %}
+			<h4><u>By: anonimous</u></h4>
+		{% else %}
+			<h4 class = "post_author"><u>By: {{post.author_name}}</u></h4>
+		{% endif %}
 		<p class = "post_content">{{post.content}}</p>
 	</div>
 	{% endfor %}
