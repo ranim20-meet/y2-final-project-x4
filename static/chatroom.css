@@ -50,3 +50,7 @@ li a:hover:not(.active) {
 .form{
 	position: center;
 }
+.posts{
+background-color: #B9B9B9;
+height: 500px;
+}
