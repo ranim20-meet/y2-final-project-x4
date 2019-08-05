@@ -10,6 +10,12 @@
 		<a href="{{url_for('tips')}}">Tips & must know</a>
 	</div>
 	<h1> Welcome to our home page </h1>
-	<a href="{{ url_for('chat')}}">Go to our chat room</a>
+	<h4>Admin Login:</h4>
+	<form action = '/admin-login' method="post">
+		<input type="text" name="username" placeholder="username"> <br>
+		<input type="password" name="paswword" placeholder="password"> <br>
+		<input type="submit" name="submit" placeholder="submit">
+	</form>
+
 </body>
 </html>
