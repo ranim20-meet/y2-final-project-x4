@@ -3,7 +3,7 @@
 <head>
   <title>Home Page</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navbar.css') }}">
-` <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
@@ -17,14 +17,16 @@
       
   </ul>
   </div>
-  <h1> Welcome to our home page </h1>
-  <h4>Admin Login:</h4>
-  <form action = '/admin-login' method="post">
-    <input type="text" name="username" placeholder="username"> <br>
-    <input type="password" name="password" placeholder="password"> <br>
-    <input type="submit" name="submit" placeholder="submit">
-  </form>
 
+  <header>
+    <div>    
+      <h1> Choose to live better. </h1>
+      <br>
+      <a href="#getting_started" id = "start_btn">Get started!</a>
+    </div>
+  </header>
+  
+<section id = "getting_started">
 <div class="slideshow-container">
 
 <div class="mySlides fade">
@@ -61,7 +63,27 @@
 The company's goal is to continue to lead the field in innovation, solutions and advanced technologies that will support the implementation of vertical projects around the world, taking into account consumable resources and all in easy-to-maintain and durable solutions over time.</p></center>
 
 
+
 <script type="text/javascript" src="{{ url_for('static', filename='home.js')}}"></script>
+</section>
+
+
+<footer>
+  <h4>Admin Login:</h4>
+  <form action = '/admin-login' method="post">
+    <input type="text" name="username" placeholder="username"> <br>
+    <input type="password" name="password" placeholder="password"> <br>
+    <input type="submit" name="submit" placeholder="submit">
+  </form>
+
+  <div class="social_media">
+    <ul>
+      <img src="facebook">
+      <img src="ig">
+      <img src="youtube">
+    </ul>
+  </div>
+</footer>
 
 </body>
 </html>

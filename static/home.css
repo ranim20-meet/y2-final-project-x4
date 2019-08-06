@@ -1,3 +1,7 @@
+html {
+  scroll-behavior:smooth
+}
+
 p{
   margin:10px;
   padding: 16px;
@@ -101,4 +105,46 @@ img {vertical-align: middle;}
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
+}
+
+header {
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+header h1 {
+  color: white;
+  margin: 0px;
+  font-size: 5em;
+  text-align: center;
+}
+
+header div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5) 0px, rgba(33, 37, 41, 0.72) 100%), url(bright-bush-close-up-101841.jpg);
+  margin: 0px;
+  padding: 0px;
+
+}
+
+#getting_started {
+  background-color: blue;
+  padding: 50px;
+}
+
+#start_btn {
+  color: white;
+  border: 5px solid #7fb576;
+  background-color: #7fb576;
+  border-radius: 25px;
+  margin-top: 25px;
+  padding: 10px
 }
