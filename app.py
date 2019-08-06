@@ -39,7 +39,11 @@ def admin_login():
 	if admin != None and admin.verify_password(request.form["password"]):
 		login_session['name'] = admin.username
 		login_session['logged_in'] = True
+<<<<<<< HEAD
+		return render_template('chatroom.html', login_session = login_session)
+=======
 		return render_template('chatroom.html', login_session = login_session, all_posts = all_posts)
+>>>>>>> 98ee279424e53ee3160438f2839666f7c048c536
 	else:
 		return home()
 

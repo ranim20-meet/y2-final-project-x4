@@ -66,3 +66,8 @@ def query_all_admins():
 	return session2.query(Admin).all()
 
 # END ADMIN CODE
+<<<<<<< HEAD
+
+add_admin("hello", "hello")
+=======
+>>>>>>> 98ee279424e53ee3160438f2839666f7c048c536

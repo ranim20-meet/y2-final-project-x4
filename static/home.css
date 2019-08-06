@@ -10,7 +10,8 @@ h3{
   padding: 22px;
 }
 * {box-sizing: border-box}
-body {font-family: Verdana, sans-serif; margin:0}
+body {font-family: Verdana; sans-serif; margin:0;
+background-color: #e0e6df;}
 .mySlides {display: none}
 img {vertical-align: middle;}
 
@@ -148,3 +149,6 @@ header div {
   margin-top: 25px;
   padding: 10px
 }
+=======
+>>>>>>> 98ee279424e53ee3160438f2839666f7c048c536
+>>>>>>> 4a33a8093d37911e466aca81ab1e91de9f6d20b8
