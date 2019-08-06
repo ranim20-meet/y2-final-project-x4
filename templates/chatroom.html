@@ -6,21 +6,20 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navbar.css') }}">
 </head>
 <body>
-	<div id="form">
-	<div class = "navbar" style ="margin-top: -10px;margin-left:-5px; font-family:Arial, sans-serif;
-">
-	<ul>
-  		<li><a href="{{url_for( 'home')}}">Home</a></li>
-  		<li><a href="{{url_for( 'chat')}}">Chat</a></li>
-  		<li><a href="{{url_for( 'tips')}}">Tips & must know</a></li>
-  		<li><a href="{{url_for( 'admin_logout')}}" id = "log_out_button">Log Out</a></li>
-  		
-	</ul>
-	</div>
+	<div class = "navbar">
+
+      <div class="nav_item"><a href="{{url_for( 'home')}}">Home</a></div>
+      <div class="nav_item"><a href="{{url_for( 'chat')}}">Chat</a></div>
+      <div class="nav_item"><a href="{{url_for( 'tips')}}">Tips & must know</a></div>
+      <div class="nav_item"><a href="{{url_for( 'admin_logout')}}" id = "log_out_button">Log Out</a></div>
+      
+  </div>
 
 <br><br><br>
+
+	<div id="form">
 	<div id="mini_form">
-	<h1 align="center">Add a comment!</h1>
+	<h1 align="center" id="comment_h1">Add a comment!</h1>
 
 	<form action = "/chat" method = "post" >
 		<div id="submit_buttons">

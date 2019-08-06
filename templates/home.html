@@ -10,13 +10,11 @@
 </head>
 <body>
   <div class = "navbar">
-  <ul>
-      <li><a href="{{url_for( 'home')}}">Home</a></li>
-      <li><a href="{{url_for( 'chat')}}">Chat</a></li>
-      <li><a href="{{url_for( 'tips')}}">Tips & must know</a></li>
-      <li><a href="{{url_for( 'admin_logout')}}" id = "log_out_button">Log Out</a></li>
-      
-  </ul>
+
+      <div class="nav_item"><a href="{{url_for( 'home')}}">Home</a></div>
+      <div class="nav_item"><a href="{{url_for( 'chat')}}">Chat</a></div>
+      <div class="nav_item"><a href="{{url_for( 'tips')}}">Tips & must know</a></div>
+      <div class="nav_item"><a href="{{url_for( 'admin_logout')}}" id = "log_out_button">Log Out</a></div>
   </div>
 
   <header>
@@ -28,6 +26,11 @@
   </header>
   
 <section id = "getting_started">
+<br>
+<br>
+<br>
+<br>
+<h1>Be the change you want to see</h1>
 <div class="slideshow-container">
 
 <div class="mySlides fade">
@@ -79,6 +82,54 @@
 <script type="text/javascript" src="{{ url_for('static', filename='home.js')}}"></script>
 </section>
 
+  <section class="page-section" id="services">
+    <div class="container">
+      <h2 class="text-center mt-0">Benefits</h2>
+      <hr class="dividering light my-4">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+             <img src="static/data.png" alt="data" style="width:36%;height:36%;border:0;">
+            <br>
+            <br>
+            <br>
+            <h3 class="h4 mb-2">Natural Isolation</h3>
+            <p class="text-muted mb-0">The walls' structure provide natural acoustic and thermal isolation </p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <img src="static/home.png" alt="home" style="width:40%;height:40%;border:0;">
+            <br>
+            <br>
+            <br>
+            <h3 class="h4 mb-2">Clean Air</h3>
+            <p class="text-muted mb-0">Plants absorb carbon-dioxide and produce Oxygen constantly</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <img src="static/diverse.png" alt="diverse" style="width:36%;height:36%;border:0;">
+            <br>
+            <br>
+            <br>
+            <h3 class="h4 mb-2">Business Opportunity</h3>
+            <p class="text-muted mb-0">Plant, grow, harvest and sell agricultural produce - without leaving your home</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <img src="static/t.png" alt="time" style="width:40%;height:40%;border:0;">
+          <br>
+           <br>
+           <br>
+            <h3 class="h4 mb-2" >Aesthtic</h3>
+            <p class="text-muted mb-0">Walls filled with plants are beautiful and aesthtically pleasing, as well as relaxing</p>
+          </div>
+        </div>
+      </div>
+</section>
+
 
 <footer>
   <div class = "admin_login">
@@ -92,9 +143,9 @@
 
   <div class="social_media">
     <ul>
-      <img src="static/photos/facebook.png"><a href="https://www.facebook.com/greenwallisrael/"></a>
-      <img src="static/photos/instagram-black-png-6.png"><a href=""></a>
-      <img src="static/photos/youtube.png" id="youtube"><a href="https://www.youtube.com/channel/UCgCCnOdfAUT2wU4DPl2_oUw"></a>
+      <a href="https://www.facebook.com/greenwallisrael/"><img src="static/photos/facebook.png"></a>
+      <a href="https://instagram.com/green_wall_israel?igshid=8hqp82qlaz7j"><img src="static/photos/instagram-black-png-6.png"></a>
+      <a href="https://www.youtube.com/channel/UCgCCnOdfAUT2wU4DPl2_oUw"><img src="static/photos/youtube.png" id="youtube"></a>
     </ul>
   </div>
 </footer>

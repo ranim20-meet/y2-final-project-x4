@@ -43,10 +43,11 @@ def admin_login():
 	else:
 		return home()
 
-@app.route('/admin-logout', methods = ['POST'])
+@app.route('/admin-logout', methods = ['GET'])
 def admin_logout():
 	login_session['username'] = None
-	return home()
+	login_session['logged_in'] = False
+	return redirect(url_for("home"))
 
 @app.route('/delete/<int:post_id>', methods = ['POST'])
 def delete_post(post_id):

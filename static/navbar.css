@@ -2,50 +2,49 @@
 
 
 .navbar {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-  width: 100%;
   position: fixed;
   z-index: 2;
   font-family:Arial, sans-serif;
-}
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: white;
+  width: 100%;
 
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  text-align: center;
+  height: 60px;
+  background-color: rgba(255,255,255,1);
 }
 
-li {
-  float: left;
-  size:5px;
+.nav_item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 25%;
   font-size: 25px;
   border-left: 2px solid #7fb576;
-
 }
 
 #log_out_button{
   size:2px;
   font-size: 25px;
-  padding: 1em 3em;
+
 }
 
 
-li a {
+.nav_item a {
   display: block;
   color: #7fb576;
-  text-align: center;
-  padding: 1em 8.02em;
   text-decoration: none;
+  text-align: center;
 }
 
-li a:hover:not(.active) {
+.nav_item a:hover:not(.active) {
   background-color: #e0e6df;
   color:#7fb576;
   cursor: pointer;
+
 }
 
 /**/

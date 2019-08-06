@@ -65,4 +65,3 @@ def get_admin(username):
 def query_all_admins():
 	return session2.query(Admin).all()
 
-# END ADMIN CODE
