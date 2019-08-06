@@ -1,4 +1,6 @@
 /*nav bar*/
+
+
 .navbar {
 	display: flex;
 	flex-direction: row;
@@ -6,6 +8,7 @@
   width: 100%;
   position: fixed;
   z-index: 2;
+  font-family:Arial, sans-serif;
 }
 ul {
   list-style-type: none;
