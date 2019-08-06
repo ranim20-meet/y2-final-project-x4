@@ -33,22 +33,12 @@ def tips():
 @app.route('/admin-login', methods=['POST'])
 def admin_login():
 	admin = get_admin(request.form['username'])
-<<<<<<< HEAD
-	if admin != None and admin.verify_password(request.form["password"]):
-		login_session['name'] = user.username
-		login_session['logged_in'] = True
-		return render_template('chatroom.html', login_session = login_session)
-	else:
-		return home()
-
-=======
 	all_posts = query_all_posts()
 	all_posts = all_posts[::-1]
 	if admin != None and admin.verify_password(request.form["password"]):
 		login_session['name'] = admin.username
 		login_session['logged_in'] = True
-		print(login_session)
-		return render_template('chatroom.html', login_session = login_session, all_posts = all_posts)
+		return render_template('chatroom.html', login_session = login_session)
 	else:
 		return home()
 
@@ -63,7 +53,6 @@ def delete_post(post_id):
 	all_posts = query_all_posts()
 	all_posts = all_posts[::-1]
 	return render_template('chatroom.html', all_posts = all_posts, login_session = login_session)
->>>>>>> 319793b7485916dfe1f5efeca6de1ea18afd42e3
 
 if __name__ == '__main__':
     app.run(debug=True)
