@@ -11,11 +11,11 @@ DBSession1 = sessionmaker(bind=engine1)
 session1 = DBSession1()
 
 # Post functions: use 
-def add_post(author_name, title, content):
+def add_post(author_name, title, content, author_email):
 	"""
 	Add new post to posts.db
 	"""
-	new_post = Post(author_name = author_name, title = title, content = content)
+	new_post = Post(author_name = author_name, title = title, content = content, author_email = author_email)
 	session1.add(new_post)
 	session1.commit()
 

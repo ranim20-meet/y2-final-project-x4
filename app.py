@@ -21,8 +21,9 @@ def chat():
 		author_name = request.form['author_name']
 		title = request.form['title']
 		content = request.form['content']
+		author_email = request.form['author_email']
 
-		add_post(author_name = author_name, title = title, content = content)
+		add_post(author_name = author_name, title = title, content = content, author_email = author_email)
 		all_posts = query_all_posts()
 		all_posts = all_posts[::-1]
 		return render_template('chatroom.html', all_posts = all_posts, login_session  = login_session)

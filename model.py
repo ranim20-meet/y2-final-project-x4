@@ -13,6 +13,7 @@ class Post(Base):
 	author_name = Column(String)
 	title = Column(String)
 	content = Column(String)
+	author_email = Column(String)
 
 	def __repr__(self):
 		return ("Author: {}\n"
