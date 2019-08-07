@@ -40,3 +40,19 @@ class Admin(Base):
 				"password: {} \n").format(
 				self.username, 
 				self.password_hash)
+
+class Reply(Base):
+	__tablename__ = 'replies'
+	reply_id = Column(Integer, primary_key = True)
+	parent_id = Column(Integer)
+	reply_author_name = Column(String)
+	reply_title = Column(String)
+	reply_content = Column(String)
+
+	def __repr__(self):
+		return ("Author: {}\n"
+				"Title: {} \n"
+				"Reply: {}").format(
+					self.reply_author_name,
+					self.reply_title,
+					self.reply_content)

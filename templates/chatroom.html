@@ -20,7 +20,7 @@
 	<div id="form">
 	<div id="mini_form">
 	<h1 align="center" id="comment_h1">Add a comment!</h1>
-
+	<!-- add post form -->
 	<form action = "/chat" method = "post" >
 		<div id="submit_buttons">
 		<p>Name:</p>
@@ -40,6 +40,8 @@
 </div>
 	<div class="posts">
 	{% for post in all_posts %}
+
+	<!-- show post -->
 	<div class = "post_item">
 		{% if post.title == "" %}
 			<h3>No Title</h3>
@@ -52,13 +54,66 @@
 			<h4 class = "post_author"><u>By: {{post.author_name}}</u></h4>
 		{% endif %}
 		<p class = "post_content">{{post.content}}</p>
-		{% if login_session['logged_in'] == True %}
+
+		
+		<!-- make form show and hide -->
+		<button onclick="var elts = document.getElementsByClassName('reg_reply{{post.post_id | safe}}');console.log(elts);for(let x of elts){x.classList.toggle('hide')}; console.log('click')">reply</button>
+		{% for reply in all_replies %}
+			<div class="reply_item">
+			{% if reply.parent_id == post.post_id %}
+				{% if reply.reply_title == "" %}
+					<h3>No Title</h3>
+				{% else %}
+					<h3 class = "reply_title">{{reply.reply_title}}</h3>
+				{% endif %}
+				{% if reply.reply_author_name == "" %}
+					<h4><u>By: anonimous</u></h4>
+				{% else %}
+					<h4 class = "reply_author"><u>By: {{reply.reply_author_name}}</u></h4>
+				{% endif %}
+				<p class = "reply_content">{{reply.reply_content}}</p>
+			{%endif%}
+			</div>
+		{%endfor%}
+		<style type="text/css">
+			.hide{
+				display: none;
+			}
+			.reply_item{
+				background-color: blue;
+				margin-left: 30px;
+			}
+		</style>
+
+		<!-- regular reply form -->
+		<form  action="/reg_reply/{{post.post_id}}" method="post">
+			<label class = "hide reg_reply{{post.post_id}}">Name:</label>
+			<input class = "hide reg_reply{{post.post_id}}" type="text" name="reply_author" placeholder="Name">
+			<br>
+
+			<label class = "hide reg_reply{{post.post_id}}">Title:</label>
+			<input class = "hide reg_reply{{post.post_id}}" type="text" name="reply_title" placeholder="reply title">
+			<br>
+			
+			<label class = "hide reg_reply{{post.post_id}}">reply:</label>
+			<input class = "hide reg_reply{{post.post_id}}" type="textarea" name="reply_content">
+			<input class="hide reg_reply{{post.post_id}}" type="submit" name="send_reply" value="send" >
+		</form>
+
+
+		<!-- admin reply form -->
+		{% if login_session['logged_in'] %}
 		<form action="/delete/{{post.post_id}}" method="post">
-    		<input type="submit" name="delete" value="delete">
+    		<input type="submit" name="Delete" value="delete">
+    	</form>
+    	<form action="/admin_reply/{{post.post_id}}" method="post">
+    		<input type="textarea" name="msg">
+    		<input type="submit" name="reply" value="admin reply" >
     	</form>
     	{% endif %}
 	</div>
 	{% endfor %}
 </div>
+
 </body>
 </html>

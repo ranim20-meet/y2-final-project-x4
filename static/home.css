@@ -171,6 +171,16 @@ header div {
 /*getting_started section design END*/
 
 /*benefits section design START (basically from trues19)*/
+#benefits {
+  background-color: white;
+}
+
+.container{
+  padding: 20px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
 .text-center {
   text-align: center !important;
 }
@@ -188,8 +198,8 @@ header div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   margin-right: -15px;
   margin-left: -15px;
 }
@@ -208,9 +218,9 @@ header div {
 
 .col-md-6 {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
-   max-width: 50%;
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  max-width: 50% !important;
 }
 
 .mt-5,
@@ -233,7 +243,24 @@ header div {
   margin-bottom: 0 !important;
 }
 
-/*benefits section design START*/
+hr.dividering {
+    max-width: 3.25rem;
+    border-width: 0.2rem;
+    border-color: #03e788 !important;
+}
+
+.mb-4, .my-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/*benefits section design End*/
 
 
 /*footer design START*/
@@ -254,12 +281,27 @@ footer ul {
   background-color: #7fb576;
 }
 
-footer .social_media img {
-  width: 30px;
+.creds {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.social_media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reg {
+  width: 54px;
 }
 
 #youtube {
-  width: 40px
+  width: 45px;
+  padding-right:5px;
+  margin-left: 4px
 }
 /*footer design END*/
 
