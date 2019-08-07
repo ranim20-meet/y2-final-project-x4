@@ -6,17 +6,29 @@ body{
 
 #comment_h1{
 	margin: 0;
+	padding-top: 30px;
 }
 
 .post_item{
 	margin: 0 auto;	
 	word-wrap: break-word; 
-	background-color: #7fb576;
+	border: 3px solid #7fb576;
+	border-radius: 10px;
+	margin-top: 10PX;
 	width:50%;
-	border-radius: 2%;
 	font-family:Arial, sans-serif;
+	background-color: white;
 
-
+}
+.post_title{
+	margin-left: 6px;
+	color:#7fb576;
+}
+.post_author{
+	margin-left: 6px;
+}
+.post_content{
+	margin-left: 6px;	
 }
 #form{
 	text-align: center;
@@ -29,7 +41,7 @@ body{
 }
 .posts{
 
-background-color: #B9B9B9;
+background-color: #e0e6df;
 height: 3000px;
 padding-top: 100px;
 }
@@ -41,11 +53,25 @@ padding-top: 100px;
 	font-family:Arial, sans-serif;
 	font-size: 25px;
 }
-#submit_erea{
+.submit_erea{
 	  border-radius: 4px;
 	  margin: auto;
+}
+.post_content{
+	padding-bottom: 7px;
 }
 
 textarea {
 	margin: auto;
+}
+#submit_form{
+	border-radius: 4px;
+	/*background-color: white;*/
+	background-color: Transparent;
+    border:2px solid white;
+	color:white;
+	width:100px;
+	height: 33px;
+	font-size: 20px;
+
 }
