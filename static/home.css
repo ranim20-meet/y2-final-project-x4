@@ -156,6 +156,8 @@ header div {
 /*getting_started section design START*/
 #getting_started {
   background-color: #e0e6df;
+  padding-bottom: 75px
+  padding-top: 95px;
 }
 
 #start_btn {
