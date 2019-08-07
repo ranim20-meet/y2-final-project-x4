@@ -63,6 +63,8 @@ def admin_logout():
 @app.route('/delete/<int:post_id>', methods = ['POST'])
 def delete_post(post_id):
 	delete_post_by_id(post_id)
+	delete_reply_by_parent(post_id)
+
 	all_posts = query_all_posts()
 	all_posts = all_posts[::-1]
 	all_replies = query_all_replies()

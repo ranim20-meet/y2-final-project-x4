@@ -10,7 +10,7 @@
 
       <div class="nav_item"><a href="{{url_for( 'home')}}">Home</a></div>
       <div class="nav_item"><a href="{{url_for( 'chat')}}">Chat</a></div>
-      <div class="nav_item"><a href="{{url_for( 'tips')}}">Tips & must know</a></div>
+      <div class="nav_item"><a href="/#benefits">Benefits</a></div>
       <div class="nav_item"><a href="{{url_for( 'admin_logout')}}" id = "log_out_button">Log Out</a></div>
       
   </div>
@@ -57,21 +57,22 @@
 
 		
 		<!-- make form show and hide -->
-		<button onclick="var elts = document.getElementsByClassName('reg_reply{{post.post_id | safe}}');console.log(elts);for(let x of elts){x.classList.toggle('hide')}; console.log('click')">reply</button>
+		<button class = "sub_btn" onclick="var elts = document.getElementsByClassName('reg_reply{{post.post_id | safe}}');console.log(elts);for(let x of elts){x.classList.toggle('hide')}; console.log('click')">reply</button>
+		<!-- reply -->
 		{% for reply in all_replies %}
 			<div class="reply_item">
 			{% if reply.parent_id == post.post_id %}
 				{% if reply.reply_title == "" %}
 					<h3>No Title</h3>
 				{% else %}
-					<h3 class = "reply_title">{{reply.reply_title}}</h3>
+					<h3 class = "reply_items" id="reply_title"> {{reply.reply_title}}</h3>
 				{% endif %}
 				{% if reply.reply_author_name == "" %}
 					<h4><u>By: anonimous</u></h4>
 				{% else %}
-					<h4 class = "reply_author"><u>By: {{reply.reply_author_name}}</u></h4>
+					<h4 class = "reply_items"><u>By: {{reply.reply_author_name}}</u></h4>
 				{% endif %}
-				<p class = "reply_content">{{reply.reply_content}}</p>
+				<p class = "reply_items">{{reply.reply_content}}</p>
 			{%endif%}
 			</div>
 		{%endfor%}
@@ -80,8 +81,31 @@
 				display: none;
 			}
 			.reply_item{
-				background-color: blue;
 				margin-left: 30px;
+/*				border: 2px solid #7fb576;
+*/				border-left:8px double #7fb576;
+				
+			}
+			.reply_items{
+				padding-left: 5px;
+			}
+			#reply_title{
+				color:#7fb576;
+				font-size:22px;
+			}
+
+			.sub_btn {
+				background-color: Transparent;
+				border: 2px solid #7fb576;
+				border-radius: 3px;
+				color:#7fb576;
+				margin-left: 6px;
+			}
+
+			.adminreply{
+				margin-left: 6px;
+				margin-bottom: 12px;
+				margin-top: 12px;
 			}
 		</style>
 
@@ -97,23 +121,44 @@
 			
 			<label class = "hide reg_reply{{post.post_id}}">reply:</label>
 			<input class = "hide reg_reply{{post.post_id}}" type="textarea" name="reply_content">
-			<input class="hide reg_reply{{post.post_id}}" type="submit" name="send_reply" value="send" >
+			<input class="hide reg_reply{{post.post_id}} sub_btn" type="submit" name="send_reply" value="send" >
 		</form>
 
 
 		<!-- admin reply form -->
 		{% if login_session['logged_in'] %}
 		<form action="/delete/{{post.post_id}}" method="post">
-    		<input type="submit" name="Delete" value="delete">
+    		<input type="submit" name="Delete" value="delete" class = "sub_btn">
     	</form>
     	<form action="/admin_reply/{{post.post_id}}" method="post">
-    		<input type="textarea" name="msg">
-    		<input type="submit" name="reply" value="admin reply" >
+    		<input type="textarea" name="msg" class="adminreply">
+    		<input type="submit" name="reply" value="admin reply" class="sub_btn" >
     	</form>
     	{% endif %}
 	</div>
 	{% endfor %}
 </div>
+
+<footer>
+  <div class = "admin_login">
+  <h4>Admin Login:</h4>
+  <form action = '/admin-login' method="post">
+    <input type="text" name="username" placeholder="username"> <br>
+    <input type="password" name="password" placeholder="password"> <br>
+    <input type="submit" name="submit" placeholder="submit">
+  </form>
+  </div>
+
+  <div class = "creds text-center">  Created by: MEET group X4</div>
+
+  <div class="social_media">
+    <ul>
+      <a href="https://www.facebook.com/greenwallisrael/"><img src="static/photos/facebook.png" class="reg"></a>
+      <a href="https://instagram.com/green_wall_israel?igshid=8hqp82qlaz7j"><img src="static/photos/instagram-black-png-6.png" class="reg"></a>
+      <a href="https://www.youtube.com/channel/UCgCCnOdfAUT2wU4DPl2_oUw"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/YouTube_social_dark_circle_%282017%29.svg/600px-YouTube_social_dark_circle_%282017%29.svg.png" id="youtube"></a>
+    </ul>
+  </div>
+</footer>
 
 </body>
 </html>

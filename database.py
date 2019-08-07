@@ -65,6 +65,7 @@ def get_admin(username):
 def query_all_admins():
 	return session2.query(Admin).all()
 
+
 # END OF ADMIN CODE
 #------------------
 # START REPLY CODE
@@ -84,10 +85,12 @@ def add_reply(parent_id, reply_author_name, reply_title, reply_content):
 	session3.add(new_reply)
 	session3.commit()
 
-def query_reply_by_parent(parent_id):
-	return session3.query(Reply).filter_by(parent_id = parent_id).all()
+def delete_reply_by_parent(parent_id):
+	session3.query(Reply).filter_by(parent_id = parent_id).delete()		
+	session3.commit()
 
 def query_all_replies():
 	return session3.query(Reply).all()
 
 #END OF REPLY CODE
+

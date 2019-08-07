@@ -272,7 +272,12 @@ footer {
   background-color: #7fb576;
 
 }
-
+#be_the_change{
+  text-align: center;
+  color:green;
+  font-family: Verdana; sans-serif;
+  font-size: 40px;
+}
 .admin_login h4 {
   margin: 0;
 }

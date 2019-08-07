@@ -1,5 +1,6 @@
 body{
 	background-color: #e0e6df;
+	margin: 0;
 
 }
 
@@ -23,6 +24,9 @@ body{
 .post_title{
 	margin-left: 6px;
 	color:#7fb576;
+	font-size: 30px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 .post_author{
 	margin-left: 6px;
@@ -42,8 +46,8 @@ body{
 .posts{
 
 background-color: #e0e6df;
-height: 3000px;
-padding-top: 100px;
+height: 1500px;
+padding-top: 75px;
 }
 #mini_form{
 	color: white;
@@ -74,4 +78,45 @@ textarea {
 	height: 33px;
 	font-size: 20px;
 
+}
+
+
+footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  background-color: #7fb576;
+
+}
+
+.admin_login h4 {
+  margin: 0;
+}
+
+footer ul {
+  background-color: #7fb576;
+}
+
+.creds {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.social_media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reg {
+  width: 54px;
+}
+
+#youtube {
+  width: 45px;
+  padding-right:5px;
+  margin-left: 4px
 }

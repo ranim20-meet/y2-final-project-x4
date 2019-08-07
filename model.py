@@ -16,9 +16,11 @@ class Post(Base):
 	author_email = Column(String)
 
 	def __repr__(self):
-		return ("Author: {}\n"
+		return ("id: {}\n"
+				"Author: {}\n"
 				"Title: {} \n"
 				"Comment: {}").format(
+					self.post_id,
 					self.author_name,
 					self.title,
 					self.content)
@@ -50,9 +52,11 @@ class Reply(Base):
 	reply_content = Column(String)
 
 	def __repr__(self):
-		return ("Author: {}\n"
+		return ("parent id: {}\n"
+				"Author: {}\n"
 				"Title: {} \n"
 				"Reply: {}").format(
+					self.parent_id,
 					self.reply_author_name,
 					self.reply_title,
 					self.reply_content)
